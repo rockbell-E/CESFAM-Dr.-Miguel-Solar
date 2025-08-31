@@ -2,17 +2,8 @@
 import HeaderButton from "./HeaderButton.astro";
 ---
 
-<header class="w-full bg-blue-300 text-white">
-  <div class="flex items-center justify-between bg-gray-200 text-gray-700 px-4 py-2 text-sm">
-    <nav class="hidden md:flex gap-4">
-      <a href="/providencia" class="hover:text-blue-600">Providencia</a>
-    </nav>
-
-    <nav class="ml-auto hidden md:flex gap-3 font-semibold">
-      <a href="/reserva" class="px-3 py-1 bg-blue-600 text-white rounded hover:bg-blue-700">Reserva de Hora</a>
-      <a href="/pago" class="px-3 py-1 bg-blue-600 text-white rounded hover:bg-blue-700">Pago de Cuentas</a>
-      <a href="/miclinica" class="px-3 py-1 bg-orange-500 text-white rounded hover:bg-orange-600">Mi Clínica Pepe</a>
-    </nav>
+<header class="w-full bg-white text-black shadow-2xl">
+  <div class="flex items-center justify-between bg-white  px-4 py-2 text-sm shadow-2xl" >
   </div>
 
   <div class="relative">
@@ -21,101 +12,30 @@ import HeaderButton from "./HeaderButton.astro";
         <a href="/" class="shrink-0">
           <img src="/logo.png" alt="Logo" class="h-12" />
         </a>
-
+        <div class="relative group">
+          <HeaderButton href="/">Inicio</HeaderButton>
+        </div>
         <div class="relative group">
           <HeaderButton href="/especialidades/especialidades">Especialidades</HeaderButton>
-          <div
-            class="pointer-events-none absolute left-0 -translate-x-1/35 top-full w-[90vw] max-w-7xl bg-blue-300 text-white shadow-lg z-50
-                   opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:pointer-events-auto transition"
-          >
-            <div class="mx-auto px-6 py-8">
-              <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6 text-center">
-                <a href="/especialidades/categorias/ninos" class="hover:underline">Niños</a>
-                <a href="/especialidades/categorias/adolescentes" class="hover:underline">Adolescentes</a>
-                <a href="/especialidades/categorias/mujeres" class="hover:underline">Mujeres</a>
-                <a href="/especialidades/categorias/hombres" class="hover:underline">Hombres</a>
-                <a href="/especialidades/categorias/adultos" class="hover:underline">Adultos Mayores</a>
-              </div>
-
-              <div class="my-6 border-t border-white/30"></div>
-
-              <div class="grid grid-cols-1 sm:grid-cols-2 text-center gap-4">
-                <a href="/especialidades" class="hover:underline">Especialidades</a>
-                <a href="/indice-profesionales" class="hover:underline">Nombre del profesional</a>
-              </div>
-            </div>
-          </div>
         </div>
 
         <div class="relative group">
           <HeaderButton href="/atencion/opciones">¿Necesitas atención?</HeaderButton>
-          <div class="pointer-events-none absolute left-1/2 -translate-x-1/3 top-full w-[60vw] max-w-3xl bg-blue-300 text-white shadow-lg z-50
-                      opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:pointer-events-auto transition">
-            <!-- Puedes agregar contenido aquí -->
-          </div>
         </div>
 
         <div class="relative group">
-          <HeaderButton href="/informate">Infórmate</HeaderButton>
+          <HeaderButton href="/informate">OIRS</HeaderButton>
         </div>
 
         <div class="relative group">
-          <HeaderButton href="/eligenos">Elígenos</HeaderButton>
-          <div
-            class="pointer-events-none absolute left-1/1 -translate-x-2/3 top-full w-[90vw] max-w-5xl bg-blue-300 text-white shadow-lg z-50
-                   opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:pointer-events-auto transition"
-          >
-            <div class="mx-auto px-4 py-4">
-              <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-2 gap-2 text-center">
-                <a href="/especialidades/categorias/ninos" class="hover:underline">Medicina de vanguardia</a>
-                <a href="/especialidades/categorias/adolescentes" class="hover:underline">Especialidades destacadas</a>
-              </div>
-
-              <div class="my-4 border-t border-white/30"></div>
-
-              <div class="grid grid-cols-1 sm:grid-cols-4 text-center gap-4">
-                <a href="/especialidades" class="hover:underline">Indicadores clínicos</a>
-                <a href="/especialidades/partes-del-cuerpo" class="hover:underline">Acreditaciones</a>
-                <a href="/indice-profesionales" class="hover:underline">Reporte de Sustentabilidad</a>
-                <a href="/indice-profesionales" class="hover:underline">Trabaja con nosotros</a>
-              </div>
-            </div>
-          </div>
+          <HeaderButton href="/eligenos">Eligenos</HeaderButton>
         </div>
-
-        <div class="relative group">
-          <HeaderButton href="/ubicaciones">Ubicaciones</HeaderButton>
-          <div
-            class="pointer-events-none absolute left-0 -translate-x-2/3 top-full w-[90vw] max-w-5xl bg-blue-300 text-white shadow-lg z-50
-                   opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:pointer-events-auto transition"
-          >
-            <div class="mx-auto px-1 py-3">
-              <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-1 gap-3 text-center">
-                <a href="/especialidades/categorias/ninos" class="hover:underline">Clínica Santa María Providencia</a>
-              </div>
-
-              <div class="my-5 border-t border-white/30"></div>
-
-              <div class="grid grid-cols-1 sm:grid-cols-5 text-center gap-5">
-                <a href="/especialidades" class="hover:underline">Laboratorio/Toma de Muestras</a>
-                <a href="/especialidades/partes-del-cuerpo" class="hover:underline">Adolescencia</a>
-                <a href="/indice-profesionales" class="hover:underline">Salud Mental</a>
-                <a href="/indice-profesionales" class="hover:underline">Banco de Sangre</a>
-                <a href="/indice-profesionales" class="hover:underline">Vacunatorio</a>
-              </div>
-              <div class="grid grid-cols-1 sm:grid-cols-4 text-center gap-4">
-                <a href="/especialidades" class="hover:underline">Colegio Aula Clínica Santa María</a>
-                <a href="/especialidades/partes-del-cuerpo" class="hover:underline">Oficina Administrativa Convenio de Accidentes</a>
-                <a href="/indice-profesionales" class="hover:underline">Pago de Cuentas</a>
-                <a href="/indice-profesionales" class="hover:underline">Servicio de Urgencia</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <HeaderButton href="/convenios">Convenios y seguros</HeaderButton>
+        
       </nav>
-
+      <nav class="ml-auto hidden md:flex gap-3 font-semibold">
+      <a href="/reserva" class="px-3 py-1 bg-gray-300 text-black rounded hover:bg-gray-500">Reserva de Hora</a>
+      <a href="/miclinica" class="px-3 py-1 bg-red-500 text-white rounded hover:bg-red-600">Mi Clínica </a>
+    </nav>
       <label for="mobile-toggle" class="md:hidden cursor-pointer p-2">
         <img src="/menu.png" alt="Abrir menú" class="h-7 w-7" />
       </label>
@@ -124,17 +44,15 @@ import HeaderButton from "./HeaderButton.astro";
     <input id="mobile-toggle" type="checkbox" class="peer hidden" />
     <div class="md:hidden bg-blue-300 text-white max-h-0 overflow-hidden transition-all duration-300 peer-checked:max-h-[32rem]">
       <nav class="flex flex-col gap-2 px-4 pb-4 font-semibold">
+        <a href="/" class="py-2 border-b border-white/20">Inicio</a>
         <a href="/especialidades" class="py-2 border-b border-white/20">Especialidades</a>
         <a href="/atencion/opciones" class="py-2 border-b border-white/20">¿Necesitas atención?</a>
-        <a href="/informate" class="py-2 border-b border-white/20">Infórmate</a>
+        <a href="/informate" class="py-2 border-b border-white/20">OIRS</a>
         <a href="/eligenos" class="py-2 border-b border-white/20">Elígenos</a>
-        <a href="/ubicaciones" class="py-2 border-b border-white/20">Ubicaciones</a>
-        <a href="/convenios" class="py-2">Convenios y seguros</a>
 
         <div class="mt-3 border-t border-white/30 pt-3 grid grid-cols-1 gap-2">
-          <a href="/reserva" class="px-3 py-2 bg-blue-600 rounded text-center">Reserva de Hora</a>
-          <a href="/pago" class="px-3 py-2 bg-blue-600 rounded text-center">Pago de Cuentas</a>
-          <a href="/miclinica" class="px-3 py-2 bg-orange-500 rounded text-center">Mi Clínica Pepe</a>
+          <a href="/reserva" class="px-3 py-1 bg-gray-300 text-black rounded hover:bg-gray-500">Reserva de Hora</a>
+          <a href="/miclinica" class="px-3 py-1 bg-red-500 text-white rounded hover:bg-red-600">Mi Clínica </a>
         </div>
       </nav>
     </div>
