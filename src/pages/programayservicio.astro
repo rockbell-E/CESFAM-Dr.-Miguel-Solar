@@ -1,0 +1,88 @@
+---
+import Layout from '../layouts/Layout.astro';
+const programas = [
+  {
+    titulo: "Programa de Salud del Niño",
+    descripcion: "Enfocado en el crecimiento y desarrollo infantil."
+  },
+  {
+    titulo: "Programa de la Mujer",
+    descripcion: "Atención integral para la salud de las mujeres."
+  },
+  {
+    titulo: "Programa de Salud del Adulto y Adulto Mayor",
+    descripcion: "Atención integral para estas etapas de la vida."
+  },
+  {
+    titulo: "Programa Cardiovascular",
+    descripcion: "Prevención y manejo de enfermedades del corazón."
+  },
+  {
+    titulo: "Programa de Participación Comunitaria",
+    descripcion: "Iniciativas y talleres para fortalecer la vida comunitaria."
+  },
+  {
+    titulo: "Programa Nacional de Alimentación Complementaria",
+    descripcion: "Apoyo nutricional para grupos específicos de la población."
+  },
+  {
+    titulo: "Programa 'Elige Vida Sana'",
+    descripcion: "Fomenta hábitos saludables para prevenir enfermedades crónicas como hipertensión y diabetes."
+  }
+];
+
+const servicios = [
+  {
+    titulo: "Solicitud de horas",
+    descripcion: "Pide tu hora de atención para consultas, controles y otros servicios mediante Teletriage en APS o presencialmente."
+  },
+  {
+    titulo: "Atención de urgencia",
+    descripcion: "El centro cuenta con servicios de urgencia para casos que lo requieran."
+  },
+  {
+    titulo: "Campañas de vacunación",
+    descripcion: "Vacunación contra influenza, COVID-19, sarampión y neumonía, entre otras."
+  },
+  {
+    titulo: "Certificados e informes médicos",
+    descripcion: "Solicita certificados o informes médicos según tu necesidad."
+  }
+];
+---
+
+<Layout title="Programa y Servicios">
+    <section class="w-full max-w-6xl mx-auto px-6 md:px-12 py-12">
+    <h1 class="text-3xl md:text-4xl font-bold text-center mb-10 text-gray-800">
+        Programas y Servicios del CESFAM Dr. Miguel Solar
+    </h1>
+
+    <div class="mb-16">
+        <h2 class="text-2xl font-semibold text-gray-700 mb-6 text-center">
+        Programas de Salud
+        </h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {programas.map((p) => (
+            <div class="bg-white shadow-md hover:shadow-xl transition rounded-2xl p-6 border border-gray-100">
+            <h3 class="text-lg font-semibold text-red-600 mb-2">{p.titulo}</h3>
+            <p class="text-gray-600 text-sm leading-relaxed">{p.descripcion}</p>
+            </div>
+        ))}
+        </div>
+    </div>
+
+    <div>
+        <h2 class="text-2xl font-semibold text-gray-700 mb-6 text-center">
+        Servicios Disponibles
+        </h2>
+        <div class="grid md:grid-cols-2 gap-6">
+        {servicios.map((s) => (
+            <div class="bg-white shadow-md hover:shadow-xl transition rounded-2xl p-6 border border-gray-100">
+            <h3 class="text-lg font-semibold text-blue-600 mb-2">{s.titulo}</h3>
+            <p class="text-gray-600 text-sm leading-relaxed">{s.descripcion}</p>
+            </div>
+        ))}
+        </div>
+    </div>
+    </section>
+</Layout>
