@@ -9,11 +9,14 @@ datasource db {
 }
 
 model AreaExamen {
-  id_area_examen Int    @id @default(autoincrement())
+  id_area_examen Int      @id @default(autoincrement())
   nombre_area    String
+  examenes       Examen[]
 
-  examenes Examen[]
+  @@map("area_examen") 
 }
+
+
 
 model Examen {
   id_examen      Int    @id @default(autoincrement())
@@ -37,7 +40,7 @@ model DetalleExamen {
 model DetalleConsulta {
   id_detalle_consulta Int    @id @default(autoincrement())
   resumen_consulta    String
-  id_reserva          Int    @unique // 👈 fix
+  id_reserva          Int    @unique 
   id_estado_reserva   Int
   id_ficha_paciente   Int
 
@@ -106,7 +109,7 @@ model FechaHora {
   fecha_hora    DateTime
 
   reservas  Reserva[]
-  pacientes Paciente[] // 👈 fix agregado
+  pacientes Paciente[] // 
 }
 
 model Paciente {
@@ -171,4 +174,22 @@ model Urgencia {
   numero_urgencia      Int
 
   pacientes Paciente[]
+}
+
+model Programa {
+  id_programa Int       @id @default(autoincrement())
+  nombre      String
+  servicios   Servicio[]
+
+  @@map("programa")
+}
+
+model Servicio {
+  id_servicio Int      @id @default(autoincrement())
+  nombre      String
+  programa    Programa @relation(fields: [id_programa], references: [id_programa])
+
+  id_programa Int
+
+  @@map("servicio")
 }
