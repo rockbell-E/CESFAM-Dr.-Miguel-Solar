@@ -1,0 +1,17 @@
+---
+import { PrismaClient } from "@prisma/client"
+const prisma = new PrismaClient()
+
+const pacientes = await prisma.paciente.findMany()
+---
+
+<html lang="es">
+  <body>
+    <h1>Pacientes</h1>
+    <ul>
+      {pacientes.map(p => (
+        <li>{p.primer_nombre_paciente} {p.apellido_p_paciente}</li>
+      ))}
+    </ul>
+  </body>
+</html>
